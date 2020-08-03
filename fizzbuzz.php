@@ -22,25 +22,21 @@ class Checker
             return true;
         }
     }
-    
-    private function fizzbuzz()
-    {
-        if($this->num % 3 === 0 && $this->num % 5 === 0){
-            return true;
-        }
-    }
 
     public function judgeFizzBuzz()
     {
-        if($this->fizzbuzz()){
-            echo "FizzBuzz\n";
-        }elseif($this->fizz()){
-            echo "Fizz\n";
-        }elseif($this->buzz()){
-            echo "Buzz\n";
-        }else{
-            echo $this->num."\n";
+        if($this->fizz()){
+            echo "Fizz";
         }
+        if($this->buzz()){
+            echo "Buzz";
+        }
+        if(!$this->fizz() && !$this->buzz())
+        {
+            echo $this->num;
+        }
+
+        echo PHP_EOL;
     }
 }
 
